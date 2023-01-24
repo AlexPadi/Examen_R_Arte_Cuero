@@ -1,43 +1,100 @@
-const Student=require('../models/Student');
-const studentController={};
+const db = require("../models");
+const Student = db.student;
 
-studentController.getStudent=async (req, res)=>
-{
-    const student= await Student.find();
-    res.json(student);
-// res.json({ status: 'Listado Gastos '});
-}
+// Create and Save a new Tutorial
+exports.create = (req, res) => {
+    // Validate request
+    if (!req.body.title) {
+        res.status(400).send({ message: "Content can not be empty!" });
+        return;
+    }
 
-studentController.createStudent= async (req, res)=>{
-    const student=new Student({
+    // Create a Tutorial
+    const student = new Student({
         name: req.body.name,
         email: req.body.email,
         telephone: req.body.telephone,
         pass: req.body.pass
     });
-    console.log(student);
-    await student.save();
-    res.json('status: student guardado');
-}
-studentController.getStudent=async (req, res)=>{
-    console.log(req.params.id);
-    const student=await Student.findById(req.params.id);
-    res.json(student);
-}
-studentController.editStudent=async (req, res)=>{
-    const {_id}=req.params;
-    const student={
-        name: req.body.name,
-        email: req.body.email,
-        telephone: req.body.telephone,
-        pass: req.body.pass
-    };
-    await Student.findByIdAndUpdate(_id, {$set:student},{new: true});
-    res.json('status: student actualizado');
-}
 
-studentController.deleteStudent=async (req, res)=>{
-    await Student.findByIdAndRemove(req.params.id);
-    res.json('status: student borrado');
-}
-module.exports=studentController;
+    // Save Tutorial in the database
+    student
+        .save(student)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while creating the Tutorial."
+            });
+        });
+};
+
+// // Retrieve all Tutorials from the database.
+// exports.findAll = (req, res) => {
+
+// };
+
+// // Find a single Tutorial with an id
+// exports.findOne = (req, res) => {
+
+// };
+
+// Update a Tutorial by the id in the request
+exports.update = (req, res) => {
+    if (!req.body) {
+        return res.status(400).send({
+          message: "Data to update can not be empty!"
+        });
+      }
+    
+      const id = req.params.id;
+    
+      Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+        .then(data => {
+          if (!data) {
+            res.status(404).send({
+              message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+            });
+          } else res.send({ message: "Tutorial was updated successfully." });
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: "Error updating Tutorial with id=" + id
+          });
+        });
+};
+
+// Delete a Tutorial with the specified id in the request
+exports.delete = (req, res) => {
+    const id = req.params.id;
+
+    Student.findByIdAndRemove(id)
+      .then(data => {
+        if (!data) {
+          res.status(404).send({
+            message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          });
+        } else {
+          res.send({
+            message: "Tutorial was deleted successfully!"
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Could not delete Tutorial with id=" + id
+        });
+      });
+};
+
+// // Delete all Tutorials from the database.
+// exports.deleteAll = (req, res) => {
+
+// };
+
+// // Find all published Tutorials
+// exports.findAllPublished = (req, res) => {
+
+// };

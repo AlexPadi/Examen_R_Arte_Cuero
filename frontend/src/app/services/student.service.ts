@@ -10,12 +10,18 @@ const baseUrl = 'http://localhost:8081/api/students';
 })
 export class StudentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { 
+    console.log('El servicio Http esta funcionando…');
+  }
 
   
   // getAll(): Observable<Tutorial[]> {
   //   return this.http.get<Tutorial[]>(baseUrl);
   // }
+
+
+
+
 
   get(id: any): Observable<Student> {
     return this.http.get(`${baseUrl}/${id}`);
@@ -32,6 +38,9 @@ export class StudentService {
   delete(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
+
+
+
 
   // deleteAll(): Observable<any> {
   //   return this.http.delete(baseUrl);

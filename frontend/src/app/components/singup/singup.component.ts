@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Student } from 'src/app/models/student.model/student.model';
 import { StudentService } from 'src/app/services/student.service';
 
@@ -18,7 +18,11 @@ export class SingupComponent {
 
   constructor(private studentService: StudentService){}
 
+  ngOnInit(): void {
+  }
+
   newStudent(){
+    
     const data = {
       name: this.student.name,
       email: this.student.email,

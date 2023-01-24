@@ -1,5 +1,5 @@
 const db = require("../models");
-const Student = db.student;
+const Student = db.students;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {

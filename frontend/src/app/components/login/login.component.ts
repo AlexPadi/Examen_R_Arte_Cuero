@@ -23,9 +23,10 @@ export class LoginComponent {
       .subscribe({
         next: (data) => {
           this.students = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
+
+      
   }
 }

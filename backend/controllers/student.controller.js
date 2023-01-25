@@ -38,7 +38,6 @@ exports.findAll = (req, res) => {
   const email = req.query.email;
   const pass=req.query.pass;
   var condition = { email: email,pass:pass} ;
-  console.log(condition)
   Student.find(condition)
     .then(data => {
       res.send(data);

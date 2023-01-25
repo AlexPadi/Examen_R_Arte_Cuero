@@ -36,7 +36,8 @@ exports.create = (req, res) => {
 // // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
   const email = req.query.email;
-  var condition = email ? { email: { $regex: new RegExp(email), $options: "i" } } : {};
+  const pass=req.query.pass;
+  var condition = (email && pass) ? { email: { $regex: new RegExp(email), $options: "i" },pass: { $regex: new RegExp(pass), $options: "i" } } : {};
   console.log(condition)
 
   Student.find(condition)

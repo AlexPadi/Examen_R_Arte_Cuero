@@ -34,9 +34,22 @@ exports.create = (req, res) => {
 };
 
 // // Retrieve all Tutorials from the database.
-// exports.findAll = (req, res) => {
+exports.findAll = (req, res) => {
+  const email = req.query.email;
+  var condition = email ? { email: { $regex: new RegExp(email), $options: "i" } } : {};
+  console.log(condition)
 
-// };
+  Student.find(condition)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
 
 // // Find a single Tutorial with an id
 // exports.findOne = (req, res) => {
@@ -100,19 +113,3 @@ exports.delete = (req, res) => {
 // exports.findAllPublished = (req, res) => {
 
 // };
-
-exports.findByEmail = (req, res) => {
-  const email = req.params.email;
-
-  Student.findByEmail(email)
-    .then(data => {
-      if (!data)
-        res.status(404).send({ message: "Not found Student with id " + email });
-      else res.send(data);
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .send({ message: "Error retrieving Student with email=" + email });
-    });
-};

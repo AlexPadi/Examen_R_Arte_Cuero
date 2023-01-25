@@ -6,7 +6,7 @@ module.exports = app => {
     router.post("/", students.create);
   
     // Retrieve all Tutorials
-    // router.get("/", tutorials.findAll);
+    router.get("/", students.findAll);
   
     // // Retrieve all published Tutorials
     // router.get("/published", tutorials.findAllPublished);
@@ -14,7 +14,7 @@ module.exports = app => {
     // // Retrieve a single Tutorial with id
     //router.get("/:id", students.findOne);
 
-    //router.get("?email=:email", students.findByEmail);
+    //router.get("/:id", students.findByEmail);
   
     // Update a Tutorial with id
     router.put("/:id", students.update);

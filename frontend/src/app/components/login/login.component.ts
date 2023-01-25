@@ -12,13 +12,14 @@ export class LoginComponent {
   currentStudent: Student = {};
   currentIndex = -1;
   email = '';
+  pass=''
   constructor(private studentService: StudentService){}
   
   findByEmail(): void {
     this.currentStudent = {};
     this.currentIndex = -1;
 
-    this.studentService.findByEmail(this.email)
+    this.studentService.findByEmail(this.email,this.pass)
       .subscribe({
         next: (data) => {
           this.students = data;

@@ -48,7 +48,7 @@ export class StudentService {
   //   return this.http.delete(baseUrl);
   // }
 
-  findByEmail(email: any): Observable<Student[]> {
-     return this.http.get<Student[]>(`${baseUrl}?email=${email}`);
+  findByEmail(email: any,pass: any): Observable<Student[]> {
+     return this.http.get<Student[]>(`${baseUrl}?email=${email}&pass=${email}`);
   }
 }

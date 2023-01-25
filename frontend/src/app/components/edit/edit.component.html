@@ -1,0 +1,86 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href=" ">
+                <img src="../../../assets/logo.png" height="15" alt="MDB Logo" loading="lazy" />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Administrador</a>
+                </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+
+        </div>
+        <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+
+
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Perfil del Alumno</div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Nombre del Alumno</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Ingrese el nombre" value="Alumno">
+                        </div>   
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (Contraseña)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="psw">Contraseña</label>
+                                <input class="form-control" id="psw" type="password" placeholder="Ingrese una Contraseña">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="confirm-psw">Confrime la Contraseña</label>
+                                <input class="form-control" id="confirm-psw" type="password" placeholder="Repita la Contraseña" >
+                            </div>
+                        </div>            
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Ingrese la dirección de correo" value="name@example.com">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Teléfono</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Ingrese el nombre" value="555-123-4567">
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="button">Guardar Cambios</button>
+                        <button class="btn btn-danger mx-2" type="button">Eliminar Alumno</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

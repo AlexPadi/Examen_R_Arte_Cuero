@@ -11,6 +11,7 @@ import { GruposComponent } from './components/grupos/grupos.component';
 import { StudentService } from './services/student.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     SingupComponent,
     AboutComponent,
-    GruposComponent
+    GruposComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

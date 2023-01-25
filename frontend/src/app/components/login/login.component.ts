@@ -12,7 +12,7 @@ export class LoginComponent {
   currentStudent: Student = {};
   currentIndex = -1;
   email = '';
-  pass=''
+  pass='';
   constructor(private studentService: StudentService){}
   
   findByEmail(): void {

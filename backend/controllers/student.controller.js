@@ -37,9 +37,8 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const email = req.query.email;
   const pass=req.query.pass;
-  var condition = (email && pass) ? { email: { $regex: new RegExp(email), $options: "i" },pass: { $regex: new RegExp(pass), $options: "i" } } : {};
+  var condition = { email: email,pass:pass} ;
   console.log(condition)
-
   Student.find(condition)
     .then(data => {
       res.send(data);

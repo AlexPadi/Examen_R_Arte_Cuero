@@ -42,11 +42,13 @@ export class StudentService {
 
 
 
+
+
   // deleteAll(): Observable<any> {
   //   return this.http.delete(baseUrl);
   // }
 
-  // findByTitle(title: any): Observable<Tutorial[]> {
-  //   return this.http.get<Tutorial[]>(`${baseUrl}?title=${title}`);
-  // }
+  findByEmail(email: any): Observable<Student[]> {
+     return this.http.get<Student[]>(`${baseUrl}?email=${email}`);
+  }
 }

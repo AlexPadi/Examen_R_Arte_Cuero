@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Student } from 'src/app/models/student.model/student.model';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  students?: Student[];
+  currentStudent: Student = {};
+  currentIndex = -1;
+  email = '';
+  constructor(private studentService: StudentService){}
+  
+  findByEmail(): void {
+    this.currentStudent = {};
+    this.currentIndex = -1;
 
+    this.studentService.findByEmail(this.email)
+      .subscribe({
+        next: (data) => {
+          this.students = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
 }

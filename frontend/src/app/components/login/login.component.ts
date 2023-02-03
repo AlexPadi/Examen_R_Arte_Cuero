@@ -13,7 +13,7 @@ import { Admin } from 'src/app/models/admin.model/admin.model';
 export class LoginComponent {
   admins?: Admin[];
   students?: Student[];
-  //currentStudent: Student = {};
+  currentStudent: any ;
   //currentIndex = -1;
   email = '';
   pass='';
@@ -37,8 +37,11 @@ export class LoginComponent {
             .subscribe({
               next: (dataS) => {
                 this.students = dataS;
-
+                
                 if (this.students!=null) {
+                  //this.currentStudent=dataS;
+                  console.log(this.email)
+                  localStorage.setItem('email',this.email);
                   this.router.navigate(["/noticias"]);
                 }          
               },

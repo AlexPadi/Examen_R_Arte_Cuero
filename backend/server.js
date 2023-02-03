@@ -1,7 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 
+
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http, {
+    cors: {
+        origins: ['http://localhost:4200']
+    }
+});
+
 
 app.use(express.urlencoded({extended:false}));
 
@@ -38,12 +46,29 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
+io.on('connection',(socket)=>{
+  // socket.on('message', function (msg) {
+  //   console.log(msg);  
+  //   //io.send(msg);
+  //   socket.broadcast.send(msg);
+  // });
+
+   //io.sockets.emit('broadcast',{ description: clients + ' clients connected!'});
+   socket.on('message', function (msg) {
+      io.sockets.emit('broadcast',{ msg: msg});
+   });
+})
+
 require("./routes/student.routes")(app);
 require("./routes/admin.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
 
-app.listen(PORT, () => {
+http.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+// http.listen(3000,()=>{
+//   console.log(`Server is running on port 3000.`);
+// })

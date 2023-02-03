@@ -15,10 +15,10 @@
         </div>
     </div>
     <div class="card-footer text-muted input-group">
-        <input type="text" class="form-control" placeholder="Ingrese su mensaje">
+        <input type="text" class="form-control" placeholder="Ingrese su mensaje" [(ngModel)]="newMensaje" [ngModelOptions]="{standalone: true}">
         <div class="input-group-append">
             <span class="input-group-text" id="basic-addon2"> <img
-                    src="https://cdn-icons-png.flaticon.com/512/786/786407.png" width="20px" alt="send message">
+                    src="https://cdn-icons-png.flaticon.com/512/786/786407.png" width="20px" alt="send message" (click)="sendMensaje()">
             </span>
         </div>
     </div>

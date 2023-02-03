@@ -1,7 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Mensaje } from 'src/app/models/mensaje.model/mensaje.model';
-import { WebSocketServiceService } from 'src/app/services/web-socket-service.service';
+import io from 'socket.io-client';
+
+const SOCKET_ENDPOINT='localhost:8081';
+
+
 
 @Component({
   selector: 'app-chat',
@@ -10,29 +14,48 @@ import { WebSocketServiceService } from 'src/app/services/web-socket-service.ser
 })
 export class ChatComponent implements OnInit,OnDestroy{
   mostrarChat=false;
+  socket:any;
   newMensaje="";
+  indexMensaje=0;
   mensajes: any[]=[
-    {
-      reseptor:"id",
-      text:"sdasd"
-    },
-    {
-      emisor:"id",
-      text:"hola gente como estamos todoas  q lo disfrutemoss dicen"
-    }
+    // {
+    //   reseptor:"id",
+    //   text:"sdasd"
+    // },
+    // {
+    //   emisor:"id",
+    //   text:"hola gente como estamos todoas  q lo disfrutemoss dicen"
+    // }
   ];
-  constructor(public webSoketService: WebSocketServiceService){}
+  constructor(){}
 
   ngOnInit(): void{
-    //this.webSoketService.openWebSocket();
+    this.setupSocketConnection();
+  }
+
+  setupSocketConnection(){
+    this.socket=io(SOCKET_ENDPOINT);
+
+    // this.socket.on('message-broadcast',(data:Mensaje)=>{
+    //   console.log(data);
+    // });
+    this.socket.on('broadcast',(data:any)=>{
+      data.msg.emisor=null;
+      data.msg.reseptor="d";
+      console.log(data.msg)
+      this.mensajes.push(data.msg);
+   });
   }
 
   ngOnDestroy(): void {
-    //this.webSoketService.closeWebSocket();
+    
   }
 
-  sendMensaje(sendForm: NgForm){
-    const mensaje= new Mensaje(sendForm.value.user,"null",sendForm.value);
-    console.log(this.newMensaje);
+  sendMensaje(){
+    const mensaje= new Mensaje(null,this.indexMensaje+"",this.newMensaje);
+    this.socket.emit('message',mensaje);
+    this.mensajes.push(mensaje);
+    this.newMensaje="";
+    this.indexMensaje++;
   }
 }

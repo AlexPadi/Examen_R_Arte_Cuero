@@ -1,0 +1,51 @@
+.cardContainer {
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+#chat-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 0 10px #999;
+}
+
+.card-header {
+    background-color: rgb(102, 102, 243);
+    color: white;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 0.5rem;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/acb65873426833.5c08f5634f7fb.png');
+}
+
+.chatIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.closeIcon {
+    position: absolute;
+    right: 0.5rem;
+    top: 0rem;
+    cursor: pointer;
+}
+
+.chatIconContainer {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}

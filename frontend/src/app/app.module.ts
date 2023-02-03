@@ -17,6 +17,7 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AboutEstComponent } from './components/about-est/about-est.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { AdminService } from './services/admin.service';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminService } from './services/admin.service';
     EditComponent,
     NoticiasComponent,
     AboutEstComponent,
-    EventosComponent
+    EventosComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

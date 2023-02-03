@@ -40,10 +40,14 @@ export class ChatComponent implements OnInit,OnDestroy{
     //   console.log(data);
     // });
     this.socket.on('broadcast',(data:any)=>{
-      data.msg.emisor=null;
-      data.msg.reseptor="d";
-      console.log(data.msg)
-      this.mensajes.push(data.msg);
+      let currentMensaje=this.mensajes[this.mensajes.length-1];
+      if (data.msg?.emisor!=currentMensaje?.emisor) {
+        console.log(data.msg);
+        data.msg.emisor=null;
+        data.msg.reseptor=new Date()+"";
+        this.mensajes.push(data.msg);
+      }
+      ;
    });
   }
 
@@ -52,10 +56,9 @@ export class ChatComponent implements OnInit,OnDestroy{
   }
 
   sendMensaje(){
-    const mensaje= new Mensaje(null,this.indexMensaje+"",this.newMensaje);
+    const mensaje= new Mensaje(null,new Date()+"",this.newMensaje);
     this.socket.emit('message',mensaje);
     this.mensajes.push(mensaje);
     this.newMensaje="";
-    this.indexMensaje++;
   }
 }

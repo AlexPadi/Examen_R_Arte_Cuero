@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Admin } from 'src/app/models/admin.model/admin.model';
 import { Student } from 'src/app/models/student.model/student.model';
 import { AdminService } from 'src/app/services/admin.service';
@@ -25,7 +26,7 @@ export class SingupComponent {
   }
   submitted = false;
 
-  constructor(private studentService: StudentService,private adminService: AdminService){}
+  constructor(private studentService: StudentService,private adminService: AdminService,private router: Router){}
 
   ngOnInit(): void {
   }
@@ -44,6 +45,7 @@ export class SingupComponent {
         next: (res) => {
           console.log(res);
           this.submitted = true;
+          this.router.navigate(["/noticias"]);
         },
         error: (e) => console.error(e)
       });

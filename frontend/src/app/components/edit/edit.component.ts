@@ -19,4 +19,7 @@ export class EditComponent {
     this.secondPass="";
   }
 
+  updateStudent(){
+    
+  }
 }

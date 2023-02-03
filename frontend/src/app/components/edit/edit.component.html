@@ -65,18 +65,18 @@
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Email</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Ingrese la dirección de correo" value="name@example.com">
+                            <input [(ngModel)]="student.email" [ngModelOptions]="{standalone: true}" class="form-control" id="inputEmailAddress" type="email" placeholder="Ingrese la dirección de correo" value="name@example.com">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (phone number)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Teléfono</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Ingrese el nombre" value="555-123-4567">
+                                <input [(ngModel)]="student.telephone" [ngModelOptions]="{standalone: true}" class="form-control" id="inputPhone" type="tel" placeholder="Ingrese el nombre" value="555-123-4567">
                             </div>
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Guardar Cambios</button>
+                        <button class="btn btn-primary" type="button" (click)="updateStudent()">Guardar Cambios</button>
                         <button class="btn btn-danger mx-2" type="button">Eliminar Alumno</button>
                     </form>
                 </div>

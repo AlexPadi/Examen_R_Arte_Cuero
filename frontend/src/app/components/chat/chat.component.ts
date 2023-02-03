@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import Pusher from 'pusher-js';
-import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-chat',

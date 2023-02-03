@@ -13,13 +13,26 @@ export class EditComponent {
   state:any;
   student: Student;
   secondPass: String;
+<<<<<<< HEAD
 
   constructor(private studentService:StudentService,private router: Router) {
+=======
+  
+  constructor(private router: Router) {
+>>>>>>> 4f29c429cdebb657f359e8ffc1e125adb2c6e06a
     this.state=this.router.getCurrentNavigation()?.extras.state ;
     this.student=this.state.data;
     this.secondPass="";
   }
-
+  confirmDelete(){
+    var respuesta = confirm("Estas seguro que deseas Eliminar al usuario?"); 
+    if (respuesta == true){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   updateStudent(){
     this.studentService.update(this.student.id,this.student)
     .subscribe({

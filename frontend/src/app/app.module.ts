@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { EditComponent } from './components/edit/edit.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { AboutEstComponent } from './components/about-est/about-est.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { EditComponent } from './components/edit/edit.component';
     AboutComponent,
     GruposComponent,
     AdminComponent,
-    EditComponent
+    EditComponent,
+    NoticiasComponent,
+    AboutEstComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,

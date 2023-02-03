@@ -7,6 +7,9 @@ import { GruposComponent } from './components/grupos/grupos.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { AboutEstComponent } from './components/about-est/about-est.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'grupos', component: GruposComponent },
   { path: 'admin', component: AdminComponent},
-  { path: 'edit', component: EditComponent}
+  { path: 'edit', component: EditComponent},
+  { path: 'noticias', component: NoticiasComponent},
+  { path: 'eventos', component: EventosComponent},
+  { path: 'about_est', component: AboutEstComponent}
 ];
 
 @NgModule({

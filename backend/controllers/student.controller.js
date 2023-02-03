@@ -101,7 +101,7 @@ exports.update = (req, res) => {
     
       const id = req.params.id;
     
-      Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+      Student.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
           if (!data) {
             res.status(404).send({

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Student } from 'src/app/models/student.model/student.model';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-edit',
@@ -13,13 +14,20 @@ export class EditComponent {
   student: Student;
   secondPass: String;
 
-  constructor(private router: Router) {
+  constructor(private studentService:StudentService,private router: Router) {
     this.state=this.router.getCurrentNavigation()?.extras.state ;
     this.student=this.state.data;
     this.secondPass="";
   }
 
   updateStudent(){
-    
+    this.studentService.update(this.student.id,this.student)
+    .subscribe({
+      next: (res) => {
+        console.log(res);
+        //this.message = res.message ? res.message : 'This tutorial was updated successfully!';
+      },
+      error: (e) => console.error(e)
+    });
   }
 }

@@ -9,24 +9,24 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class LoginComponent {
   students?: Student[];
-  currentStudent: Student = {};
-  currentIndex = -1;
+  //currentStudent: Student = {};
+  //currentIndex = -1;
   email = '';
   pass='';
   constructor(private studentService: StudentService){}
   
   findByEmail(): void {
-    this.currentStudent = {};
-    this.currentIndex = -1;
+    //this.currentStudent = {};
+    //this.currentIndex = -1;
 
     this.studentService.findByEmail(this.email,this.pass)
       .subscribe({
         next: (data) => {
           this.students = data;
+          console.log(this.students);
         },
         error: (e) => console.error(e)
       });
 
-      
   }
 }

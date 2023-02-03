@@ -49,3 +49,25 @@
     height: 60px;
     cursor: pointer;
 }
+
+.send{
+    display: block;
+    float: right;
+    background-color: teal;
+    color: white;
+    min-width: 50.01%;
+    padding-left: 5px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.get{
+    display: block;
+    float: left;
+    background-color: gray;
+    color: white;
+    padding-left: 5px;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}

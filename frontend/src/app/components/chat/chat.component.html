@@ -8,7 +8,11 @@
         <div class="closeIcon" (click)="mostrarChat=false">X</div>
     </div>
     <div class="card-body">
-        
+        <div>
+            <p *ngFor="let mensaje of mensajes" class="pb-2" [ngClass]="mensaje.emisor!= null ? 'send' : 'get'">
+                {{mensaje.text}}
+            </p>
+        </div>
     </div>
     <div class="card-footer text-muted input-group">
         <input type="text" class="form-control" placeholder="Ingrese su mensaje">

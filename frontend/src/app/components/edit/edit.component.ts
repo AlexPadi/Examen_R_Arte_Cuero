@@ -12,13 +12,21 @@ export class EditComponent {
   state:any;
   student: Student;
   secondPass: String;
-
+  
   constructor(private router: Router) {
     this.state=this.router.getCurrentNavigation()?.extras.state ;
     this.student=this.state.data;
     this.secondPass="";
   }
-
+  confirmDelete(){
+    var respuesta = confirm("Estas seguro que deseas Eliminar al usuario?"); 
+    if (respuesta == true){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   updateStudent(){
     
   }

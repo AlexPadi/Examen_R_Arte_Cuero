@@ -64,71 +64,28 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="container text-start">
-                            <img src="../../../assets/evento_coro.jpg" width="100%" height="225" class="card-img-top">
-                            <div class="centered">
-                                <h6 class="fs-1">Noche de Canto</h6>
+                <div *ngFor="let _events of events">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="container text-start">
+                                <img src="{{_events.urlToImage}}" width="100%" height="225"
+                                    class="card-img-top">
+                                    <p class="fs-5">{{_events.title}}</p>       
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Grupo: Coro <br>
-                                Fecha: Sábado 14 de enero<br>
-                                Hora: 6:00 pm - 9:00 pm<br>
-                                Lugar: Bloque B - Aula Magna<br>
-                                Ven y disfruta de una noche inolvidable con la música y la comunidad. Esperamos verte
-                                allí!<br>
-                            </p>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    {{_events.description}}<br>
+                                    <br>
+                                    {{_events.publishedAt}}<br>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="container text-start">
-                            <img src="../../../assets/evento_futbol.jpg" width="100%" height="225" class="card-img-top">
-                            <div class="centered">
-                                <h6 class="fs-1">Torneo de Fútbol</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Grupo: Fútbol Masculino <br>
-                                Fecha: Sábado 21 de enero<br>
-                                Hora: 9:00 am - 5:00 pm<br>
-                                Lugar: Canchas Campus Sur<br>
-                                Este evento es para todos aquellos amantes del futbol, desde jugadores amateur hasta
-                                profesionales. <br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="container text-start">
-                            <img src="../../../assets/eventos.jpg" width="100%" height="225" class="card-img-top">
-                            <div class="centered">
-                                <h6 class="fs-1">Conferencia sobre ciberseguridad</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Grupo: Coro <br>
-                                Fecha: Viernes 27 de enero<br>
-                                Hora: 2:00 pm - 5:00 pm<br>
-                                Lugar: Bloque B - Aula Magna<br>
-                                Ven y aprende sobre la seguridad informática de la mano de expertos en el tema.
-                                Esperamos verte allí!<br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <footer class="text-muted py-3">

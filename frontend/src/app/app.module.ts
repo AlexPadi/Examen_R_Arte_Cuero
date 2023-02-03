@@ -19,6 +19,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { AdminService } from './services/admin.service';
 import { ChatComponent } from './components/chat/chat.component';
 import { NewsService } from './services/news.service';
+import { EventsService } from './services/events.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { NewsService } from './services/news.service';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [StudentService,AdminService,NewsService],
+  providers: [StudentService,AdminService,NewsService,EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

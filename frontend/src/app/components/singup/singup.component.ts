@@ -51,10 +51,10 @@ export class SingupComponent {
 
   newAdmin(){ 
     const data = {
-      name: this.admin.name,
-      email: this.admin.email,
-      telephone:this.admin.telephone,
-      pass:this.admin.pass
+      name: this.student.name,
+      email: this.student.email,
+      telephone:this.student.telephone,
+      pass:this.student.pass
     };
     
     this.adminService.create(data)

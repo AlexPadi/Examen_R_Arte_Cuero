@@ -10,7 +10,9 @@ const baseUrl='http://localhost:8081/api/admins';
 })
 export class AdminService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+    console.log('El servicio Http esta funcionando…');
+   }
 
   get(id: any): Observable<Admin> {
     return this.http.get(`${baseUrl}/${id}`);

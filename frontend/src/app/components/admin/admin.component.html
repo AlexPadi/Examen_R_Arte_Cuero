@@ -55,74 +55,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Roberto Nixon</td>
-                                                <td>roberto_orci@outlook.com</td>
-                                                <td>992185869</td>
+                                            <tr *ngFor="let student of students">
+                                                <td>{{student.name}}</td>
+                                                <td>{{student.email}}</td>
+                                                <td>{{student.telephone}}</td>
                                                 <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sonya Frost</td>
-                                                <td>hannibal@mail.com</td>
-                                                <td>993216589</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jena Gaines</td>
-                                                <td>gia_reeve@zohomail.com</td>
-                                                <td>956903900</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Quinn Flynn</td>
-                                                <td>Support Lead</td>
-                                                <td>985648557</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Charde Marshall</td>
-                                                <td>frank_fredericks@outlook.com</td>
-                                                <td>971451884</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Haley Kennedy</td>
-                                                <td>john_adams@protonmail.com</td>
-                                                <td>961846547</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tatyana Fitzpatrick</td>
-                                                <td>mao_zedong@zohomail.com</td>
-                                                <td>966952745</td>
-                                                <td>
-                                                    <a href="/edit">
-                                                        <button type="button" class="btn btn-info btn-sm px-3"> </button>
-                                                    </a>
+                                                    <button type="button" class="btn btn-info btn-sm px-3" (click)="editStudent(student)"> </button>
                                                 </td>
                                             </tr>
                                         </tbody>

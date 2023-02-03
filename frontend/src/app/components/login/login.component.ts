@@ -29,17 +29,18 @@ export class LoginComponent {
         next: (dataA) => {
           this.admins = dataA;
 
-          if (this.admins==null) {
+          if (this.admins!=null) {
+            this.router.navigate(["/admin"]);
+          }
+          else if (this.admins==null) {
             this.studentService.findByEmail(this.email,this.pass)
             .subscribe({
               next: (dataS) => {
                 this.students = dataS;
 
-                if (this.students==null) {
-                  console.log(this.students);
-                }
-              //this.router.navigate(["/noticias"]);
-          
+                if (this.students!=null) {
+                  this.router.navigate(["/noticias"]);
+                }          
               },
                 error: (e) => console.error(e)
             });

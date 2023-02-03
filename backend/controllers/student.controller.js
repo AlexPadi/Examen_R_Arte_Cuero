@@ -40,11 +40,22 @@ exports.findAll = (req, res) => {
   const email = req.query.email;
   const pass=req.query.pass;
   var condition = { email: email,pass:pass} ;
+  var type="";
   
+  if (condition.email==undefined && condition.pass==undefined) {
+    type="getAll";
+    condition={};
+  }
+  else{
+    type="getOne";
+  }
+
   Student.find(condition)
     .then(data => {
-  
-      if (data.length==1) {
+      if (type=="getAll") {
+        res.send(data);
+      }
+      else if (type=="getOne" && data.length==1) {
         let accessToken=Auth.generateAccessToken(condition,secret);
 
         res.header('authorization',accessToken).json({

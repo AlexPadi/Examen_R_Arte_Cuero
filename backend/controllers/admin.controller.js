@@ -1,20 +1,10 @@
 const db = require("../models");
 const Auth= require("../tools/auth")
-const Student = db.students;
+const Admin = db.admin;
 const secret="test";
 
-// Create and Save a new Tutorial
 exports.create = (req, res) => {
-
-    //console.log(req.body)
-    // Validate request
-    // if (!req.body.title) {
-    //     res.status(400).send({ message: "Content can not be empty!" });
-    //     return;
-    // }
-
-    // Create a student
-    const student = new Student({
+    const admin= new Admin({
         name: req.body.name,
         email: req.body.email,
         telephone: req.body.telephone,
@@ -22,8 +12,8 @@ exports.create = (req, res) => {
     });
 
     // Save Tutorial in the database
-    student
-        .save(student)
+    admin
+        .save(admin)
         .then(data => {
             res.send(data);
         })
@@ -37,11 +27,12 @@ exports.create = (req, res) => {
 
 // // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
+    console.log(req.query)
   const email = req.query.email;
   const pass=req.query.pass;
   var condition = { email: email,pass:pass} ;
   
-  Student.find(condition)
+  Admin.find(condition)
     .then(data => {
   
       if (data.length==1) {
@@ -109,7 +100,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Student.findByIdAndRemove(id)
+    Admin.findByIdAndRemove(id)
       .then(data => {
         if (!data) {
           res.status(404).send({
@@ -127,13 +118,3 @@ exports.delete = (req, res) => {
         });
       });
 };
-
-// // Delete all Tutorials from the database.
-// exports.deleteAll = (req, res) => {
-
-// };
-
-// // Find all published Tutorials
-// exports.findAllPublished = (req, res) => {
-
-// };

@@ -16,6 +16,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AboutEstComponent } from './components/about-est/about-est.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [StudentService],
+  providers: [StudentService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -82,80 +82,30 @@
   
         <div class=" mb-4 mb-lg-0">
           <!-- News block -->
-          <div>
+          <div *ngFor="let _new of news">
     
             <!-- News -->
             <a >
                 <div class="row mb-4 border-bottom pb-2">
                   <div class="col-3">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp"
+                    <img src="{{_new.urlToImage}}"
                       class="img-fluid shadow-1-strong rounded" alt="Los Angeles Skyscrapers" />
                   </div>
           
                   <div class="col-9">
-                    <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
+                    <p class="mb-2"><strong>{{_new.title}}</strong></p>
                     <p class="text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-                        eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-                        sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                        {{_new.description}}
                       </p>
                     <p>
-                      <u> 15.07.2020</u>
+                      <u>{{_new.publishedAt}}</u>
                     </p>
                   </div>
                 </div>
               </a>
   
-            <!-- News -->
-            <a >
-              <div class="row mb-4 border-bottom pb-2">
-                <div class="col-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/012.webp"
-                    class="img-fluid shadow-1-strong rounded" alt="Hamilton Park" />
-                </div>
+           
   
-                <div class="col-9">
-                  <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
-                  <p>
-                    <u> 15.07.2020</u>
-                  </p>
-                </div>
-              </div>
-            </a>
-  
-            <!-- News -->
-            <a >
-              <div class="row mb-4 border-bottom pb-2">
-                <div class="col-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/013.webp"
-                    class="img-fluid shadow-1-strong rounded" alt="Perdana Botanical Garden Kuala Lumpur" />
-                </div>
-  
-                <div class="col-9">
-                  <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
-                  <p>
-                    <u> 15.07.2020</u>
-                  </p>
-                </div>
-              </div>
-            </a>
-  
-            <!-- News -->
-            <a >
-              <div class="row mb-4 border-bottom pb-2">
-                <div class="col-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/014.webp"
-                    class="img-fluid shadow-1-strong rounded" alt="Perdana Botanical Garden" />
-                </div>
-  
-                <div class="col-9">
-                  <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
-                  <p>
-                    <u> 15.07.2020</u>
-                  </p>
-                </div>
-              </div>
-            </a>
           </div>
           <!-- News block -->
         </div>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/models/student.model/student.model';
 import { StudentService } from 'src/app/services/student.service';
 
@@ -12,32 +11,38 @@ import { StudentService } from 'src/app/services/student.service';
 export class EditComponent {
   state:any;
   student: Student;
-  secondPass: String;
-<<<<<<< HEAD
 
   constructor(private studentService:StudentService,private router: Router) {
-=======
-  
-  constructor(private router: Router) {
->>>>>>> 4f29c429cdebb657f359e8ffc1e125adb2c6e06a
     this.state=this.router.getCurrentNavigation()?.extras.state ;
     this.student=this.state.data;
-    this.secondPass="";
   }
   confirmDelete(){
     var respuesta = confirm("Estas seguro que deseas Eliminar al usuario?"); 
     if (respuesta == true){
+      this.studentService.delete(this.student.id)
+      .subscribe({
+        next: (res) => {
+        console.log(res);
+        this.router.navigate(['/admin']);
+        //this.toastr.success("Se actualizado el estudiante correctamente");
+        //this.message = res.message ? res.message : 'This tutorial was updated successfully!';
+      },
+      error: (e) => console.error(e)
+    });
       return true;
     }
     else{
       return false;
     }
+
+    
   }
   updateStudent(){
     this.studentService.update(this.student.id,this.student)
     .subscribe({
       next: (res) => {
         console.log(res);
+        this.router.navigate(['/admin']);
         //this.message = res.message ? res.message : 'This tutorial was updated successfully!';
       },
       error: (e) => console.error(e)

@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Admin } from '../models/admin.model/admin.model';
+import { Usuario } from '../models/usuario.model/usuario.model';
 
-const baseUrl='http://localhost:8081/api/admins';
+const baseUrl = 'http://localhost:8081/api/usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class UsuarioService {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient) { 
     console.log('El servicio Http esta funcionando…');
-   }
+  }
 
-  get(id: any): Observable<Admin> {
+  
+  getAll(): Observable<Usuario[]> {
+     return this.http.get<Usuario[]>(baseUrl);
+  }
+
+  get(id: any): Observable<Usuario> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -39,7 +44,7 @@ export class AdminService {
   //   return this.http.delete(baseUrl);
   // }
 
-  findByEmail(email: any,pass: any): Observable<Admin[]> {
-     return this.http.get<Admin[]>(`${baseUrl}?email=${email}&pass=${pass}`);
+  findByEmail(email: any,pass: any): Observable<Usuario[]> {
+     return this.http.get<Usuario[]>(`${baseUrl}?email=${email}&pass=${pass}`);
   }
 }

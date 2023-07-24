@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Student } from '../models/student.model/student.model';
+import { Empleado } from '../models/empleado.model/empleado.model';
 
-const baseUrl = 'http://localhost:8081/api/students';
+const baseUrl='http://localhost:8081/api/empleados';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
+export class EmpleadoService {
 
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient) {
     console.log('El servicio Http esta funcionando…');
-  }
+   }
 
-  
-  getAll(): Observable<Student[]> {
-     return this.http.get<Student[]>(baseUrl);
-  }
-
-  get(id: any): Observable<Student> {
+  get(id: any): Observable<Empleado> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -44,7 +39,7 @@ export class StudentService {
   //   return this.http.delete(baseUrl);
   // }
 
-  findByEmail(email: any,pass: any): Observable<Student[]> {
-     return this.http.get<Student[]>(`${baseUrl}?email=${email}&pass=${pass}`);
+  findByEmail(email: any,pass: any): Observable<Empleado[]> {
+     return this.http.get<Empleado[]>(`${baseUrl}?email=${email}&pass=${pass}`);
   }
 }

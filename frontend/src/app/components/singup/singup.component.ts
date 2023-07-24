@@ -1,9 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Admin } from 'src/app/models/admin.model/admin.model';
-import { Student } from 'src/app/models/student.model/student.model';
-import { AdminService } from 'src/app/services/admin.service';
-import { StudentService } from 'src/app/services/student.service';
+import { Empleado } from 'src/app/models/empleado.model/empleado.model';
+import { Usuario } from 'src/app/models/usuario.model/usuario.model';
+import { EmpleadoService } from 'src/app/services/empleado.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-singup',
@@ -11,36 +11,33 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./singup.component.scss']
 })
 export class SingupComponent {
-  student: Student={
+  usuario: Usuario={
     name: "",
     email:"" ,
-    telephone: "",
     pass:""
   }
 
-  admin: Admin={
+  empleado: Empleado={
     name: "",
     email:"" ,
-    telephone: "",
     pass:""
   }
   submitted = false;
 
-  constructor(private studentService: StudentService,private adminService: AdminService,private router: Router){}
+  constructor(private usuarioService: UsuarioService,private empleadoService: EmpleadoService,private router: Router){}
 
   ngOnInit(): void {
   }
 
-  newStudent(){
+  newUsuario(){
     
     const data = {
-      name: this.student.name,
-      email: this.student.email,
-      telephone:this.student.telephone,
-      pass:this.student.pass
+      name: this.usuario.name,
+      email: this.usuario.email,
+      pass:this.usuario.pass
     };
     
-    this.studentService.create(data)
+    this.usuarioService.create(data)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -51,15 +48,14 @@ export class SingupComponent {
       });
   }
 
-  newAdmin(){ 
+  newEmpleado(){ 
     const data = {
-      name: this.student.name,
-      email: this.student.email,
-      telephone:this.student.telephone,
-      pass:this.student.pass
+      name: this.usuario.name,
+      email: this.usuario.email,
+      pass:this.usuario.pass
     };
     
-    this.adminService.create(data)
+    this.empleadoService.create(data)
       .subscribe({
         next: (res) => {
           console.log(res);

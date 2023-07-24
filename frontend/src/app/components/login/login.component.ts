@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Student } from 'src/app/models/student.model/student.model';
-import { StudentService } from 'src/app/services/student.service';
+import { Usuario } from 'src/app/models/usuario.model/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
-import { AdminService } from 'src/app/services/admin.service';
-import { Admin } from 'src/app/models/admin.model/admin.model';
+import { EmpleadoService } from 'src/app/services/empleado.service';
+import { Empleado } from 'src/app/models/empleado.model/empleado.model';
 
 @Component({
   selector: 'app-login',
@@ -11,35 +11,35 @@ import { Admin } from 'src/app/models/admin.model/admin.model';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  admins?: Admin[];
-  students?: Student[];
-  currentStudent: any ;
+  empleados?: Empleado[];
+  usuarios?: Usuario[];
+  currentUsuario: any ;
   //currentIndex = -1;
   email = '';
   pass='';
-  constructor(private studentService: StudentService,private adminService: AdminService,private router: Router){}
+  constructor(private usuarioService: UsuarioService,private empleadoService: EmpleadoService,private router: Router){}
   
   findByEmail(): void {
-    //this.currentStudent = {};
+    //this.currentUsuario = {};
     //this.currentIndex = -1;
 
 
-    this.adminService.findByEmail(this.email,this.pass)
+    this.empleadoService.findByEmail(this.email,this.pass)
       .subscribe({
         next: (dataA) => {
-          this.admins = dataA;
+          this.empleados = dataA;
 
-          if (this.admins!=null) {
-            this.router.navigate(["/admin"]);
+          if (this.empleados!=null) {
+            this.router.navigate(["/empleado"]);
           }
-          else if (this.admins==null) {
-            this.studentService.findByEmail(this.email,this.pass)
+          else if (this.empleados==null) {
+            this.usuarioService.findByEmail(this.email,this.pass)
             .subscribe({
               next: (dataS) => {
-                this.students = dataS;
+                this.usuarios = dataS;
                 
-                if (this.students!=null) {
-                  //this.currentStudent=dataS;
+                if (this.usuarios!=null) {
+                  //this.currentUsuario=dataS;
                   console.log(this.email)
                   localStorage.setItem('email',this.email);
                   this.router.navigate(["/noticias"]);

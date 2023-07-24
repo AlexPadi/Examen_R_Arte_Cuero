@@ -3,7 +3,6 @@ module.exports = mongoose => {
         {
             name: String,
             email: String,
-            telephone: String,
             pass: String
         },
         { timestamps: true }
@@ -15,6 +14,6 @@ module.exports = mongoose => {
         return object;
     });
 
-    const Admin = mongoose.model("admin", schema);
-    return Admin;
+    const Usuario = mongoose.model("usuario", schema);
+    return Usuario;
 };

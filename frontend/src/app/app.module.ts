@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { AboutComponent } from './components/about/about.component';
-import { GruposComponent } from './components/grupos/grupos.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { UsuarioService } from './services/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -29,7 +29,7 @@ import { NavComponent } from './components/nav/nav.component';
     LoginComponent,
     SingupComponent,
     AboutComponent,
-    GruposComponent,
+    CatalogoComponent,
     EmpleadoComponent,
     EditComponent,
     NoticiasComponent,

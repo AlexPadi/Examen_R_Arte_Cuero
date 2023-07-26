@@ -59,8 +59,8 @@ io.on('connection',(socket)=>{
    });
 })
 
-require("./routes/student.routes")(app);
-require("./routes/admin.routes")(app);
+require("./routes/usuario.routes")(app);
+require("./routes/empleado.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;

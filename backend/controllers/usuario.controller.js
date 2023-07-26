@@ -1,6 +1,6 @@
 const db = require("../models");
 const Auth= require("../tools/auth")
-const Student = db.students;
+const Usuario = db.usuarios;
 const secret="test";
 
 // Create and Save a new Tutorial
@@ -13,8 +13,8 @@ exports.create = (req, res) => {
     //     return;
     // }
 
-    // Create a student
-    const student = new Student({
+    // Create a usuario
+    const usuario = new Usuario({
         name: req.body.name,
         email: req.body.email,
         telephone: req.body.telephone,
@@ -22,8 +22,8 @@ exports.create = (req, res) => {
     });
 
     // Save Tutorial in the database
-    student
-        .save(student)
+    usuario
+        .save(usuario)
         .then(data => {
             res.send(data);
         })
@@ -50,7 +50,7 @@ exports.findAll = (req, res) => {
     type="getOne";
   }
 
-  Student.find(condition)
+  Usuario.find(condition)
     .then(data => {
       if (type=="getAll") {
         res.send(data);
@@ -101,7 +101,7 @@ exports.update = (req, res) => {
     
       const id = req.params.id;
     
-      Student.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+      Usuario.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
           if (!data) {
             res.status(404).send({
@@ -120,7 +120,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Student.findByIdAndRemove(id)
+    Usuario.findByIdAndRemove(id)
       .then(data => {
         if (!data) {
           res.status(404).send({

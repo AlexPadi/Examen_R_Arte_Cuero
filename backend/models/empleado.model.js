@@ -15,6 +15,6 @@ module.exports = mongoose => {
         return object;
     });
 
-    const Admin = mongoose.model("admin", schema);
-    return Admin;
+    const Empleado = mongoose.model("empleado", schema);
+    return Empleado;
 };

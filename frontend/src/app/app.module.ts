@@ -8,18 +8,19 @@ import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { AboutComponent } from './components/about/about.component';
 import { GruposComponent } from './components/grupos/grupos.component';
-import { StudentService } from './services/student.service';
+import { UsuarioService } from './services/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AdminComponent } from './components/admin/admin.component';
+import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { EditComponent } from './components/edit/edit.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AboutEstComponent } from './components/about-est/about-est.component';
 import { EventosComponent } from './components/eventos/eventos.component';
-import { AdminService } from './services/admin.service';
+import { EmpleadoService } from './services/empleado.service';
 import { ChatComponent } from './components/chat/chat.component';
 import { NewsService } from './services/news.service';
 import { EventsService } from './services/events.service';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,13 @@ import { EventsService } from './services/events.service';
     SingupComponent,
     AboutComponent,
     GruposComponent,
-    AdminComponent,
+    EmpleadoComponent,
     EditComponent,
     NoticiasComponent,
     AboutEstComponent,
     EventosComponent,
-    ChatComponent
+    ChatComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { EventsService } from './services/events.service';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [StudentService,AdminService,NewsService,EventsService],
+  providers: [UsuarioService,EmpleadoService,NewsService,EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

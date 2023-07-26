@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-about-est',
-  templateUrl: './about-est.component.html',
-  styleUrls: ['./about-est.component.scss']
+  selector: 'app-empleado',
+  templateUrl: './empleado.component.html',
+  styleUrls: ['./empleado.component.scss']
 })
-export class AboutEstComponent {
+export class EmpleadoComponent {
   usuarios?: Usuario[];
-  constructor(private usuarioService:UsuarioService){
+
+  constructor(private usuarioService: UsuarioService,private router: Router){
     this.loadData();
   }
 
@@ -30,5 +32,9 @@ export class AboutEstComponent {
         },
         error: (e) => console.error(e)
       });
+  }
+
+  editUsuario(usuario:Usuario):void{
+    this.router.navigate(['/edit'], { state: { data: usuario } });
   }
 }

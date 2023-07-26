@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.students = require("./student.model.js")(mongoose);
-db.admin = require("./admin.model.js")(mongoose);
+db.usuarios = require("./usuario.model.js")(mongoose);
+db.empleado = require("./empleado.model.js")(mongoose);
 
 module.exports = db;

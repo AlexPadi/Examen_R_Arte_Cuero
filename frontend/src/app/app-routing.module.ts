@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { EditComponent } from './components/edit/edit.component';
 import { GruposComponent } from './components/grupos/grupos.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'singup', component: SingupComponent },
   { path: 'about', component: AboutComponent },
   { path: 'grupos', component: GruposComponent },
-  { path: 'admin', component: AdminComponent},
+  { path: 'empleado', component: EmpleadoComponent},
   { path: 'edit', component: EditComponent},
   { path: 'noticias', component: NoticiasComponent},
   { path: 'eventos', component: EventosComponent},

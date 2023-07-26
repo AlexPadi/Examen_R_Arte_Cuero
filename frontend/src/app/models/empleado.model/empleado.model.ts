@@ -1,4 +1,4 @@
-export class Admin {
+export class Empleado {
     id?: any;
     name?: String;
     email?: String;

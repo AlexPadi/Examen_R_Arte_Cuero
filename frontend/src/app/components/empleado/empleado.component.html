@@ -18,7 +18,7 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin">Administrador</a>
+                    <a class="nav-link" href="/empleado">Empleadoistrador</a>
                 </li>
             </ul>
             <!-- Left links -->
@@ -55,12 +55,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let student of students">
-                                                <td>{{student.name}}</td>
-                                                <td>{{student.email}}</td>
-                                                <td>{{student.telephone}}</td>
+                                            <tr *ngFor="let usuario of usuarios">
+                                                <td>{{usuario.name}}</td>
+                                                <td>{{usuario.email}}</td>
+                                                <td>{{usuario.telephone}}</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info btn-sm  px-3" (click)="editStudent(student)">
+                                                    <button type="button" class="btn btn-info btn-sm  px-3" (click)="editUsuario(usuario)">
                                                         <svg
                                                         xmlns="http://www.w3.org/2000/svg" width="16"
                                                         height="16" fill="currentColor"

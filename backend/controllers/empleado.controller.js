@@ -1,10 +1,10 @@
 const db = require("../models");
 const Auth= require("../tools/auth")
-const Admin = db.admin;
+const Empleado = db.empleado;
 const secret="test";
 
 exports.create = (req, res) => {
-    const admin= new Admin({
+    const empleado= new Empleado({
         name: req.body.name,
         email: req.body.email,
         telephone: req.body.telephone,
@@ -12,8 +12,8 @@ exports.create = (req, res) => {
     });
 
     // Save Tutorial in the database
-    admin
-        .save(admin)
+    empleado
+        .save(empleado)
         .then(data => {
             res.send(data);
         })
@@ -32,7 +32,7 @@ exports.findAll = (req, res) => {
   const pass=req.query.pass;
   var condition = { email: email,pass:pass} ;
   
-  Admin.find(condition)
+  Empleado.find(condition)
     .then(data => {
   
       if (data.length==1) {
@@ -100,7 +100,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Admin.findByIdAndRemove(id)
+    Empleado.findByIdAndRemove(id)
       .then(data => {
         if (!data) {
           res.status(404).send({

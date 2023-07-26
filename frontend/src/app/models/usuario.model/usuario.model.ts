@@ -1,4 +1,4 @@
-export class Student {
+export class Usuario {
     id?: any;
     name?: String;
     email?: String;

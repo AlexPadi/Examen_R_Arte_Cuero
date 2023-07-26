@@ -47,7 +47,7 @@
 <div class="container mt-5">
     <h1 class="text-center mb-4">Contactos</h1>
     <div class="row row-cols-1  g-3">
-        <div class="card mb-3" *ngFor="let student of students">
+        <div class="card mb-3" *ngFor="let usuario of usuarios">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="../../../assets/icon_person.webp" style="width: 70%; padding-left: 10%;" class="img-fluid rounded-start" alt="...">
@@ -55,13 +55,13 @@
               <div class="col-md-8">
                 <div class="card-body">
                     <div class="card-body">
-                        <h4 class="card-title">{{student.name}}</h4>
+                        <h4 class="card-title">{{usuario.name}}</h4>
                         <!-- <h5>Coordinador/a</h5> -->
                         <!-- <p class="card-text">Liseth Silva </p> -->
                         <!-- <p class="card-text">Estudiante de Psicología </p> -->
-                        <p class="card-text"> ​​​​​​​Correo institucional: {{student.email}}​​​​​​​</p>
+                        <p class="card-text"> ​​​​​​​Correo institucional: {{usuario.email}}​​​​​​​</p>
     
-                        <p class="card-text"> Celular: {{student.telephone}}</p>
+                        <p class="card-text"> Celular: {{usuario.telephone}}</p>
                     </div>
                 </div>
               </div>

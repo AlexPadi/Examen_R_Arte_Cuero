@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Student } from 'src/app/models/student.model/student.model';
-import { StudentService } from 'src/app/services/student.service';
+import { Usuario } from 'src/app/models/usuario.model/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-edit',
@@ -10,20 +10,20 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class EditComponent {
   state:any;
-  student: Student;
+  usuario: Usuario;
 
-  constructor(private studentService:StudentService,private router: Router) {
+  constructor(private usuarioService:UsuarioService,private router: Router) {
     this.state=this.router.getCurrentNavigation()?.extras.state ;
-    this.student=this.state.data;
+    this.usuario=this.state.data;
   }
   confirmDelete(){
     var respuesta = confirm("Estas seguro que deseas Eliminar al usuario?"); 
     if (respuesta == true){
-      this.studentService.delete(this.student.id)
+      this.usuarioService.delete(this.usuario.id)
       .subscribe({
         next: (res) => {
         console.log(res);
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/empleado']);
         //this.toastr.success("Se actualizado el estudiante correctamente");
         //this.message = res.message ? res.message : 'This tutorial was updated successfully!';
       },
@@ -37,12 +37,12 @@ export class EditComponent {
 
     
   }
-  updateStudent(){
-    this.studentService.update(this.student.id,this.student)
+  updateUsuario(){
+    this.usuarioService.update(this.usuario.id,this.usuario)
     .subscribe({
       next: (res) => {
         console.log(res);
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/empleado']);
         //this.message = res.message ? res.message : 'This tutorial was updated successfully!';
       },
       error: (e) => console.error(e)

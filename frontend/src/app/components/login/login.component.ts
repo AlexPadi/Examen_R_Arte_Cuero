@@ -42,7 +42,7 @@ export class LoginComponent {
                   //this.currentUsuario=dataS;
                   console.log(this.email)
                   localStorage.setItem('email',this.email);
-                  this.router.navigate(["/noticias"]);
+                  this.router.navigate(["/"]);
                 }          
               },
                 error: (e) => console.error(e)

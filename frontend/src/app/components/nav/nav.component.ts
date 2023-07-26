@@ -6,14 +6,14 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent {
+export class NavComponent implements  OnInit{
   userLoginOn: boolean = false;
   constructor(private usuarioService: UsuarioService) { }	
   ngOnInit(): void {
-    /*this.usuarioService.currentUserLoginOn.subscribe({
+    this.usuarioService.currentUserLoginOn.subscribe({
       next:(userLoginOn) => {
-        this.userLoginOn = this.userLoginOn;
+        this.userLoginOn = userLoginOn;
       }
-    })*/
+    })
   }
 }

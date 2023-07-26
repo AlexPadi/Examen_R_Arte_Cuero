@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,BehaviorSubject,tap } from 'rxjs';
 import { Usuario } from '../models/usuario.model/usuario.model';
 
 const baseUrl = 'http://localhost:8081/api/usuarios';
@@ -9,7 +9,8 @@ const baseUrl = 'http://localhost:8081/api/usuarios';
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  currentUserData: BehaviorSubject<Usuario[]> = new BehaviorSubject<Usuario[]>([]);
   constructor(public http: HttpClient) { 
     console.log('El servicio Http esta funcionando…');
   }
@@ -43,8 +44,22 @@ export class UsuarioService {
   // deleteAll(): Observable<any> {
   //   return this.http.delete(baseUrl);
   // }
-
-  findByEmail(email: any,pass: any): Observable<Usuario[]> {
+  /*findByEmail(email: any,pass: any): Observable<Usuario[]> {
      return this.http.get<Usuario[]>(`${baseUrl}?email=${email}&pass=${pass}`);
+  } */
+  findByEmail(email: any,pass: any): Observable<Usuario[]> {
+     return this.http.get<Usuario[]>(`${baseUrl}?email=${email}&pass=${pass}`).pipe(
+      tap((data: Usuario[]) => {
+        this.currentUserLoginOn.next(true);
+        this.currentUserData.next(data);
+      }));
   }
+  get userData(): Observable<Usuario[]> {
+    return this.currentUserData.asObservable();
+  }
+
+  get userLoginOn(): Observable<boolean> {  
+    return this.currentUserLoginOn.asObservable();
+  }
+
 }

@@ -6,12 +6,6 @@ const secret="test";
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
 
-    //console.log(req.body)
-    // Validate request
-    // if (!req.body.title) {
-    //     res.status(400).send({ message: "Content can not be empty!" });
-    //     return;
-    // }
 
     // Create a usuario
     const usuario = new Usuario({

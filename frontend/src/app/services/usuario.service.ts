@@ -23,11 +23,6 @@ export class UsuarioService {
   get(id: any): Observable<Usuario> {
     return this.http.get(`${baseUrl}/${id}`);
   }
-
-  create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
-  }
-
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
@@ -35,18 +30,9 @@ export class UsuarioService {
   delete(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
-
-
-
-
-
-
-  // deleteAll(): Observable<any> {
-  //   return this.http.delete(baseUrl);
-  // }
-  /*findByEmail(email: any,pass: any): Observable<Usuario[]> {
-     return this.http.get<Usuario[]>(`${baseUrl}?email=${email}&pass=${pass}`);
-  } */
+  create(data: any): Observable<any> {
+    return this.http.post(baseUrl, data);
+  }
   findByEmail(email: any,pass: any): Observable<Usuario[]> {
      return this.http.get<Usuario[]>(`${baseUrl}?email=${email}&pass=${pass}`).pipe(
       tap((data: Usuario[]) => {

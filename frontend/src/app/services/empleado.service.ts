@@ -29,16 +29,6 @@ export class EmpleadoService {
   delete(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
-
-
-
-
-
-
-  // deleteAll(): Observable<any> {
-  //   return this.http.delete(baseUrl);
-  // }
-
   findByEmail(email: any,pass: any): Observable<Empleado[]> {
      return this.http.get<Empleado[]>(`${baseUrl}?email=${email}&pass=${pass}`);
   }

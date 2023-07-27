@@ -48,7 +48,7 @@ export class LoginComponent {
                 error: (e) => console.error(e)
             });
           }
-          //this.router.navigate(["/noticias"]);
+          //this.router.navigate(["/comentarios"]);
           
         },
         error: (e) => console.error(e)

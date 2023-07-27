@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Usuario } from 'src/app/models/usuario.model/usuario.model';
-import { UsuarioService } from 'src/app/services/usuario.service';
+//import { Usuario } from 'src/app/models/usuario.model/usuario.model';
+//import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./empleado.component.scss']
 })
 export class EmpleadoComponent {
-  usuarios?: Usuario[];
+  /*usuarios?: Usuario[];
 
   constructor(private usuarioService: UsuarioService,private router: Router){
     this.loadData();
@@ -27,7 +27,7 @@ export class EmpleadoComponent {
           // else if (this.empleados==null) {
             
           // }
-          //this.router.navigate(["/noticias"]);
+          //this.router.navigate(["/comentarios"]);
           
         },
         error: (e) => console.error(e)
@@ -36,5 +36,5 @@ export class EmpleadoComponent {
 
   editUsuario(usuario:Usuario):void{
     this.router.navigate(['/edit'], { state: { data: usuario } });
-  }
+  }*/
 }

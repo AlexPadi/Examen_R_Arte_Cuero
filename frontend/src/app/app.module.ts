@@ -13,14 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { EditComponent } from './components/edit/edit.component';
-import { NoticiasComponent } from './components/noticias/noticias.component';
-import { AboutEstComponent } from './components/about-est/about-est.component';
-import { EventosComponent } from './components/eventos/eventos.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { GestionCatComponent } from './components/gestion_cat/gestion_cat.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 import { EmpleadoService } from './services/empleado.service';
-import { ChatComponent } from './components/chat/chat.component';
-import { NewsService } from './services/news.service';
-import { EventsService } from './services/events.service';
+import { Gestion_formComponent } from './components/gestion_form/gestion_form.component';
 import { NavComponent } from './components/nav/nav.component';
+import { GestionComComponent } from './gestion-com/gestion-com.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +31,12 @@ import { NavComponent } from './components/nav/nav.component';
     CatalogoComponent,
     EmpleadoComponent,
     EditComponent,
-    NoticiasComponent,
-    AboutEstComponent,
-    EventosComponent,
-    ChatComponent,
-    NavComponent
+    ComentariosComponent,
+    GestionCatComponent,
+    FormularioComponent,
+    Gestion_formComponent,
+    NavComponent,
+    GestionComComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,7 @@ import { NavComponent } from './components/nav/nav.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [UsuarioService,EmpleadoService,NewsService,EventsService],
+  providers: [UsuarioService,EmpleadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

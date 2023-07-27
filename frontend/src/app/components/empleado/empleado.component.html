@@ -18,13 +18,19 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="/empleado">Empleadoistrador</a>
+                    <a class="nav-link" href="/empleado">Empleado</a>
                 </li>
             </ul>
             <!-- Left links -->
         </div>
         <!-- Collapsible wrapper -->
-
+        <div class="d-flex align-items-center">
+            <a href="/">
+                <button href="/home" type="button" class="btn btn-primary me-3">
+                    Cerrar Sesión
+                </button>
+            </a>
+        </div>
         <!-- Right elements -->
         <div class="d-flex align-items-center">
 
@@ -34,8 +40,19 @@
     <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-
-
+<div class="container mt-4">
+    <h1>Bienvenido</h1>
+    <h3>Panel de Gestión del Empleado</h3>
+    <div class="list-group">
+        <!-- Botón para Gestión de Catálogo -->
+        <a href="/gestion_cat" class="list-group-item list-group-item-action">Gestión de Catálogo</a>
+        <!-- Botón para Gestión de Formularios -->
+        <a href="/gestion_form" class="list-group-item list-group-item-action">Gestión de Formularios</a>
+        <!-- Botón para Gestión de Comentarios -->
+        <a href="/gestion_com" class="list-group-item list-group-item-action">Gestión de Comentarios</a>
+    </div>
+</div>
+<!--
 <section class="intro">
     <div class="bg-image h-100">
         <div class="mask d-flex align-items-center h-100">
@@ -83,4 +100,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/usuario.model/usuario.model';
-import { UsuarioService } from 'src/app/services/usuario.service';
+//import { Usuario } from 'src/app/models/usuario.model/usuario.model';
+//import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-edit',
@@ -9,7 +9,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent {
-  state:any;
+  /*state:any;
   usuario: Usuario;
 
   constructor(private usuarioService:UsuarioService,private router: Router) {
@@ -47,5 +47,5 @@ export class EditComponent {
       },
       error: (e) => console.error(e)
     });
-  }
+  }*/
 }

@@ -45,7 +45,7 @@ export class SingupComponent {
         next: (res) => {
           console.log(res);
           this.submitted = true;
-          this.router.navigate(["/noticias"]);
+          this.router.navigate(["/login"]);
         },
         error: (e) => console.error(e)
       });

@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+
+<div class="container m-4">
+    <h2 class="blog-post-title">Comentarios y Reseñas</h2>
+</div>
+
+<div class="container mt-4">
+  <form action="#" method="post">
+
+      <!-- Campo de Nombre -->
+      <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
+      </div>
+
+      <!-- Campo de Comentario -->
+      <div class="form-group">
+          <label for="comentario">Escriba su comentario:</label>
+          <textarea class="form-control" id="comentario" name="comentario" rows="5" required></textarea>
+      </div>
+
+      <!-- Botón de enviar -->
+      <button type="submit" class="btn btn-primary mt-2">Enviar Comentario</button>
+  </form>
+
+  <!-- Mostrar Comentarios -->
+  <div class="mt-4">
+      <h2>Comentarios:</h2>
+      <ul class="list-group">
+          <!-- Ejemplo de comentarios (puedes agregar más dinámicamente con JavaScript o usando una base de datos) -->
+          <li class="list-group-item">Nombre 1: Comentario 1</li>
+          <li class="list-group-item">Nombre 2: Comentario 2</li>
+          <li class="list-group-item">Nombre 3: Comentario 3</li>
+      </ul>
+  </div>
+</div>

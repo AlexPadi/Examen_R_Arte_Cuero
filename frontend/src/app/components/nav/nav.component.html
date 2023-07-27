@@ -5,7 +5,7 @@
         <a class="navbar-brand me-2" href="#">
             <img src="../../../assets/logo.png" height="16" alt="MDB Logo" loading="lazy" style="margin-top: -1px;" />
         </a>
-
+        
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
             aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +33,12 @@
 
             <ul *ngIf="userLoginOn" class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="/eventos">Formulario</a>
+                    <a class="nav-link" href="/formulario">Formulario</a>
                 </li>
             </ul>
             <ul *ngIf="userLoginOn" class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="/noticias">Comentarios</a>
+                    <a class="nav-link" href="/comentarios">Comentarios</a>
                 </li>
             </ul>
             <ul class="navbar-nav me-auto">
@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div *ngIf="userLoginOn" class="d-flex align-items-center">
-                <a href="/login">
+                <a href="/">
                     <button href="/home" type="button" class="btn btn-primary me-3">
                         Cerrar Sesión
                     </button>
